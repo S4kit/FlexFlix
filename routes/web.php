@@ -17,6 +17,8 @@ use App\Http\Controllers\MovieSeriesController;
 */
 
 Route::prefix('movies')->name('movies.')->group(function () {
+    //In this prefix (localhost/movies/...) it has all things you can manipulate on movies action
+    //each function is explained in the function that its related to the endpoint call
     Route::get('/{page?}', [MovieSeriesController::class, 'ShowMovies']);
     Route::get('/popular/top-5', [MovieSeriesController::class, 'top5RatedMovies']);
     Route::get('/filter/{page?}', [MovieSeriesController::class, 'ShowMoviesPage']);
